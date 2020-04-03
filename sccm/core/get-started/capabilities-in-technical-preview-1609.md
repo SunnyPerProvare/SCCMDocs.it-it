@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1609 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e2a59116-b2e5-4dd2-90eb-0b8a5eb50b56
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 06b16f8d2952eb8e81962ee6a4f7f906bfd4e04a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 552135141f22b11fac23e799712b43d5764d1fcc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805150"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602741"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1609 per Configuration Manager
 
@@ -316,7 +316,7 @@ Con questa configurazione:
 Configurando i vari gruppi adiacenti perché siano disponibili in momenti diversi, è possibile controllare quando i punti di distribuzione specifici vengono aggiunti come percorso di origine del contenuto e quando o se il client esegue il fallback al gruppo limite del sito predefinito come rete di protezione per il contenuto non disponibile in altre posizioni.
 
 
-### <a name="bkmk_update"></a>Aggiornare i gruppi limite esistenti al nuovo modello
+### <a name="update-existing-boundary-groups-to-the-new-model"></a><a name="bkmk_update"></a>Aggiornare i gruppi limite esistenti al nuovo modello
 Quando si installa la versione 1609 e si aggiorna il sito, le configurazioni seguenti vengono eseguite in automatico. Tali configurazioni sono utili per verificare che il comportamento di fallback corrente rimanga disponibile finché non si configurano i nuovi gruppi limite e le relazioni.  
 - Vengono aggiunti punti di distribuzione non protetti di un sito al gruppo limite *Default-Site-Boundary-Group\<CodiceSito>* di tale sito.
 - Viene creata una copia di ogni gruppo limite esistente che include un server del sito configurato con una connessione lenta. Il nome del nuovo gruppo è ***\<nome originale del gruppo limite >-Slow-Tmp***:  
@@ -388,7 +388,7 @@ Se si sceglie di non distribuire il pacchetto nella procedura guidata, andare al
 >[!NOTE]
 >Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare un ADR per le applicazioni di Office 365, fare clic su **Create an ADR** (Crea un ADR) e selezionare **Office 365 Client** (Client Office 365) quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
 
-## <a name="BKMK_UEFIConversion"></a>Miglioramenti della conversione da BIOS a UEFI
+## <a name="improvements-for-bios-to-uefi-conversion"></a><a name="BKMK_UEFIConversion"></a>Miglioramenti della conversione da BIOS a UEFI
 È ora possibile personalizzare una sequenza di attività di distribuzione del sistema operativo con una nuova variabile, TSUEFIDrive, in modo che il passaggio di riavvio del computer prepari una partizione FAT32 sul disco rigido per la transizione a UEFI. La procedura seguente fornisce un esempio sulle modalità di creazione dei passaggi della sequenza di attività per preparare il disco rigido alla conversione da BIOS a UEFI.
 
 #### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Per preparare la partizione FAT32 alla conversione a UEFI:

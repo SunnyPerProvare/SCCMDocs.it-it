@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da eseguire prima dell'aggiornamento di Configuration Manager alla versione 1910.
 ms.date: 12/20/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9afb4452-9e58-40eb-bfd8-cbf9042a2790
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c14e662dc9f24e050221d25dff4b99f1bc35c32a
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: c8f505fffa53570d9e114cc7f2da7ec9e64ef348
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034277"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591806"
 ---
 # <a name="checklist-for-installing-update-1910-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1910 di Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Acquisire rapidamente lo stato di un client di Configuration Manager per la risoluzione dei problemi.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5cb41e2b-4c79-4da9-a432-ff869c0870f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a64f993be9bce42ef707d7a16a246f788c9326a9
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 15e7b7840536215117a870c1efcc80fd421c9b3f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825966"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598947"
 ---
 # <a name="support-center-quickstart-guide"></a>Guida introduttiva di Support Center
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Testare l'aggiornamento del database del sito durante l'installazione di aggiornamenti per Configuration Manager.
 ms.date: 06/13/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: abb696f3-a816-4f12-a9f1-0503a81e1976
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: cd0b0a2b8529b555b5aad48ef4dd1a11b723824a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fe8445b31429c49b522c39dba034c4d856d248e1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793234"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590293"
 ---
 # <a name="test-the-database-upgrade-when-installing-an-update"></a>Testare l'aggiornamento del database quando si installa un aggiornamento
 

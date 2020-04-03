@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulla differenza tra i termini installazione, aggiornamento e upgrade per la gestione dell'infrastruttura di Configuration Manager.
 ms.date: 04/30/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 17fab17f-304d-4f6a-87c7-30ab4f5521ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 512755ab8eae8a5bbfbc1b2a0eb39b69216d8ae9
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: efe1a5b70e5377d1404a76b969bc1ee69c286742
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791919"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598044"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Informazioni su upgrade, aggiornamento e installazione per l'infrastruttura del sito e della gerarchia
 

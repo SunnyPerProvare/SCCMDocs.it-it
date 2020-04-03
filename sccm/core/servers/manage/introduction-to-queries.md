@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Creare ed eseguire query per individuare gli oggetti che soddisfano i criteri delle query stesse all'interno di una gerarchia di Configuration Manager.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 03d1b3a9-41db-4d3a-a70e-e05ab5dc8141
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e841dcc232e71bc1253bf6e88d70f121d879bd31
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ff98645c7892192f2f914a25102454b5e9415fee
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75795198"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591146"
 ---
 # <a name="introduction-to-queries-in-configuration-manager"></a>Introduzione alle query in Configuration Manager
 

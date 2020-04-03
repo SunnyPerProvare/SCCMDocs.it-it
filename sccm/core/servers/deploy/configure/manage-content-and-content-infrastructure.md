@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come distribuire e gestire l'infrastruttura di gestione dei contenuti per Configuration Manager.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ceff72f5-f19d-43a0-a8c0-72f1c09b9bf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4d97f6f4eba447147e47d3412718e228e135ce10
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 165bbc829a0f2e435b6a154476bce4ce3ba7779a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798651"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80593033"
 ---
 # <a name="manage-content-and-content-infrastructure-for-configuration-manager"></a>Gestire il contenuto e l'infrastruttura del contenuto per Configuration Manager
 

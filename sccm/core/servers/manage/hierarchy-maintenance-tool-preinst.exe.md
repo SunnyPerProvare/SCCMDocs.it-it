@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle finalità dello strumento di manutenzione gerarchia e motivi per usarlo. Include informazioni di riferimento alle opzioni della riga di comando.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 37abd1044bdbcf8a517b75d1e2e7d9262526ae22
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b564575dfc135a9c82c7e102a02d70f1b6dbf6eb
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75795234"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591230"
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per Configuration Manager
 
@@ -88,7 +88,7 @@ L'opzione /PARENTKEYS posiziona la chiave del sito in cui viene eseguita l'opzio
 
 Dopo aver eseguito preinst.exe con questa opzione, copiare manualmente il file &lt;*CodiceSito*>.CT7 nella cartella …\Inboxes\hman.box del sito in corso di ripristino (non hman.box\pubkey).  
 
-##  <a name="BKMK_ManuallyExchangeKeys"></a> Scambiare manualmente chiavi pubbliche tra siti  
+##  <a name="manually-exchange-public-keys-between-sites"></a><a name="BKMK_ManuallyExchangeKeys"></a> Scambiare manualmente chiavi pubbliche tra siti  
 Per impostazione predefinita, l'opzione **Richiedi scambio di chiavi di sicurezza** è attivata per i siti di Configuration Manager. Quando è richiesto uno scambio di chiavi di sicurezza, ci sono due casi in cui è necessario eseguire manualmente lo scambio di chiavi iniziale tra siti:  
 
 -   Lo schema di Active Directory non è stato esteso per Configuration Manager  

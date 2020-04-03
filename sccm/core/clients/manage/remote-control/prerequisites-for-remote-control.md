@@ -10,12 +10,12 @@ ms.assetid: c1b2057e-b74f-43fa-a293-763a8f866d3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: eb4cb434e9507abdff65a24ab110db7003f3da97
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e555515a70fba775ebe61d58c570d29df6299bec
+ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75823841"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80540571"
 ---
 # <a name="prerequisites-for-remote-control-in-configuration-manager"></a>Prerequisiti per il controllo remoto in Configuration Manager
 
@@ -44,5 +44,5 @@ Il visualizzatore controllo remoto è supportato in tutti i sistemi operativi su
 |Dipendenza|Altre informazioni|  
 |----------------|----------------------|  
 |Il controllo remoto deve essere abilitato per i client|Per impostazione predefinita, il controllo remoto non è abilitato quando si installa Configuration Manager. Per informazioni su come abilitare e configurare il controllo remoto, vedere [Configurazione del controllo remoto](../../../../core/clients/manage/remote-control/configuring-remote-control.md).|  
-|Punto di Reporting Services|Prima di poter eseguire report per il controllo remoto, è necessario installare il ruolo del sistema del sito del punto di Reporting Services. Per altre informazioni, vedere [Reporting](../../../../core/servers/manage/reporting.md) (Creazione di report).|  
+|Punto di Reporting Services|Prima di poter eseguire report per il controllo remoto, è necessario installare il ruolo del sistema del sito del punto di Reporting Services. Per altre informazioni, vedere [Introduzione ai report](/configmgr/core/servers/manage/introduction-to-reporting).|  
 |Autorizzazioni di sicurezza per la gestione del controllo remoto|Per accedere alle risorse della raccolta e avviare una sessione di controllo remoto dalla console di Configuration Manager: autorizzazioni **Lettura**, **Leggi risorsa** e **Controllo remoto** per l'oggetto **Raccolta**.<br /><br /> Il ruolo di sicurezza **Operatore strumenti remoti** include queste autorizzazioni necessarie per gestire il controllo remoto in Configuration Manager.<br /><br /> Per altre informazioni, vedere [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../../../core/servers/deploy/configure/configure-role-based-administration.md).<br /><br /> Inoltre, agli utenti autorizzati alla visualizzazione è necessario concedere l'autorizzazione all'uso del controllo remoto aggiungendo tali utenti all'elenco **Visualizzatori autorizzati di controllo remoto e assistenza remota** nelle impostazioni client **Strumenti remoti**.

@@ -10,12 +10,12 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cd1887b0d9d148c585b79c70fcbaedcac0ba13fa
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: ec2b87c7b0fe2ee6a41627dac36e1d4aae2022ec
+ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515705"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80540827"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -29,7 +29,7 @@ Per altre informazioni sui requisiti minimi per l'hardware e il sistema operativ
 > I numeri delle versioni software elencati in questo articolo si riferiscono solo ai numeri delle versioni minime richieste.  
 
 
-## <a name="BKMK_prereqs_computers"></a> Prerequisiti per i client Windows  
+## <a name="prerequisites-for-windows-clients"></a><a name="BKMK_prereqs_computers"></a> Prerequisiti per i client Windows  
 
 Usare le informazioni seguenti per determinare i prerequisiti quando si installa il client di Configuration Manager in dispositivi Windows.  
 
@@ -42,7 +42,7 @@ Usare le informazioni seguenti per determinare i prerequisiti quando si installa
 |Utilità di pianificazione di Microsoft|Per completare l'installazione del client, abilitare questo servizio nel client.|  
 |Supporto per la firma del codice SHA-2|A partire dalla versione 1906, i client richiedono il supporto per l'algoritmo di firma del codice SHA-2. Per altre informazioni, vedere [Supporto per la firma del codice SHA-2](#bkmk_sha2).|
 
-#### <a name="bkmk_sha2"></a> Supporto per la firma del codice SHA-2
+#### <a name="sha-2-code-signing-support"></a><a name="bkmk_sha2"></a> Supporto per la firma del codice SHA-2
 
 <!--SCCMDocs-pr#3404-->
 A causa dei punti di debolezza dell'algoritmo SHA-1 e per allinearsi agli standard del settore, Microsoft ora firma solo i file binari di Configuration Manager usando l'algoritmo SHA-2 più sicuro. Per le versioni del sistema operativo Windows legacy è necessario un aggiornamento per il supporto della firma del codice SHA-2. Per altre informazioni, vedere [Requisito per il supporto di firma del codice SHA-2 2019 per Windows e Windows Server Update Services](https://support.microsoft.com/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
@@ -60,7 +60,7 @@ Se è necessario gestire un client in una versione di Windows che non è aggiorn
 > - Installazione basata sull'aggiornamento software: L'aggiornamento del sito viene ripubblicato in WSUS
 > - Dispositivi Windows gestiti da MDM Intune: La versione supportata per questo meccanismo supporta già la firma del codice SHA-2, ma è ancora importante usare la versione più recente di ccmsetup.msi
 
-### <a name="bkmk_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager e scaricate automaticamente durante l'installazione  
+### <a name="dependencies-external-to-configuration-manager-and-automatically-downloaded-during-installation"></a><a name="bkmk_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager e scaricate automaticamente durante l'installazione  
 
 Il client di Configuration Manager presenta dipendenze esterne. Queste dipendenze variano a seconda della versione del sistema operativo e del software installato nel computer client.  
 
@@ -88,7 +88,7 @@ Se il client richiede queste dipendenze per completare l'installazione, le insta
 >
 > Se si sta ancora usando l'esperienza utente del sito Web del Catalogo applicazioni, il client richiede Microsoft Silverlight 5.1.41212.0. Il client non installa automaticamente Silverlight. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center.<!--1356195-->
 
-#### <a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
+#### <a name="additional-details-about-microsoft-net-framework-version-452"></a><a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
 
 > [!NOTE]  
 > Le versioni .NET 4.0, 4.5 e 4.5.1 non sono più supportate. Per altre informazioni, vedere le [domande frequenti sul ciclo di vita del supporto per Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework).  
@@ -112,7 +112,7 @@ Per altre informazioni, vedere [Determinare i ruoli del sistema del sito per i c
 |Punto di gestione|Per distribuire il client di Configuration Manager, non è necessario un punto di gestione. I client richiedono un punto di gestione per trasferire le informazioni con il sito. Senza un punto di gestione, non è possibile gestire i computer client.|  
 |Punto di distribuzione|Il punto di distribuzione è un ruolo del sistema del sito facoltativo, ma consigliato per la distribuzione e la gestione dei client. Tutti i punti di distribuzione ospitano i file di origine del client. I client trovano il punto di distribuzione più vicino da cui scaricare i file di origine durante la distribuzione o l'aggiornamento del client. Se il sito non dispone di un punto di distribuzione, i computer scaricano i file di origine client dal punto di gestione.|  
 |Punto di stato di fallback|Il punto di stato di fallback è un ruolo del sistema del sito facoltativo, ma consigliato per la distribuzione client. Il punto di stato di fallback tiene traccia della distribuzione client e consente ai computer nel sito di Configuration Manager di inviare messaggi di stato quando non possono comunicare con un punto di gestione.|  
-|Punto di Reporting Services|Il punto di Reporting Services è un ruolo del sistema del sito facoltativo, ma consigliato. Visualizza i report relativi alla gestione e alla distribuzione del client. Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).|  
+|Punto di Reporting Services|Il punto di Reporting Services è un ruolo del sistema del sito facoltativo, ma consigliato. Visualizza i report relativi alla gestione e alla distribuzione del client. Per altre informazioni, vedere [Introduzione ai report](/configmgr/core/servers/manage/introduction-to-reporting).|  
 
 ### <a name="installation-method-dependencies"></a>Dipendenze del metodo di installazione  
 
@@ -201,7 +201,7 @@ Per le autorizzazioni di sicurezza necessarie per eseguire l'aggiornamento clien
 Se esiste un firewall tra i server di sistema del sito e i computer in cui si vuole installare il client di Configuration Manager, vedere [Impostazioni di Windows Firewall e delle porte per i client](/sccm/core/clients/deploy/windows-firewall-and-port-settings-for-clients).  
 
 
-## <a name="BKMK_prereqs_mobiledevices"></a> Prerequisiti per i client di dispositivi mobili  
+## <a name="prerequisites-for-mobile-device-clients"></a><a name="BKMK_prereqs_mobiledevices"></a> Prerequisiti per i client di dispositivi mobili  
 
 Quando si installa il client di Configuration Manager in dispositivi mobili e si esegue la registrazione, usare le informazioni seguenti per determinare i prerequisiti.  
 
@@ -245,7 +245,7 @@ Per altre informazioni, vedere [Determinare i ruoli del sistema del sito per i c
 
     Il punto di Reporting Services è un ruolo di sistema sito facoltativo ma consigliato, in grado di visualizzare report correlati alla registrazione di dispositivi mobili e alla gestione di client.  
 
-    Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
+    Per altre informazioni, vedere [Introduzione ai report](/configmgr/core/servers/manage/introduction-to-reporting).  
 
 - Per configurare la registrazione per dispositivi mobili, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
 

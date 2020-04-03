@@ -3,18 +3,18 @@ title: Che ne è stato di SCCM?
 description: Informazioni sulla modifica del marchio da System Center Configuration Manager a Microsoft Endpoint Configuration Manager
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 68430abb-d18e-4266-aa5a-3ad3ab753f4c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 92261422cf48119283107b93fea3016fbfab372f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e498fccfd21a5c46fcad4090f7cc01c13636a27d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825745"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597982"
 ---
 # <a name="what-happened-to-system-center-configuration-manager"></a>Che ne è stato di System Center Configuration Manager?
 

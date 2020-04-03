@@ -10,12 +10,12 @@ ms.assetid: 79eb49da-cd2b-4ffc-b355-b595aeba3aea
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 71ca3ab9a2bcb3233bcf134ad82117838f9f0208
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: b01cf4fd6fe9a98fc42670a51269af9c591f8c49
+ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033972"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80542178"
 ---
 # <a name="introduction-to-software-inventory-in-configuration-manager"></a>Introduzione all'inventario software in Configuration Manager
 
@@ -31,7 +31,7 @@ Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo 
 
 - Creare [raccolte basate su query](../../../../core/clients/manage/collections/introduction-to-collections.md) che includono dispositivi con i file specificati.   
 
-- [Eseguire report](../../../../core/servers/manage/reporting.md) che forniscono dettagli sui file nei dispositivi.
+- [Eseguire report](/configmgr/core/servers/manage/introduction-to-reporting) che forniscono dettagli sui file nei dispositivi.
 
 - Usare [Esplora inventario risorse](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) per visualizzare informazioni dettagliate relative ai file di inventario raccolti dai dispositivi client.   
 

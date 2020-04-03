@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Automatizzare la creazione di un lab di Configuration Manager Technical Preview o di un lab di valutazione del ramo corrente usando i modelli di Azure
 ms.date: 07/22/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9875c443-19bf-43a0-9203-3a741f305096
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 380e3fdcc3ef2ee3ca1db91620ae9a966ecc6062
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8c36ad312a285ba8a7b74b6c4abcb3cb5c8c415f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805320"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602932"
 ---
 # <a name="create-a-configuration-manager-lab-in-azure"></a>Creare un lab di Configuration Manager in Azure
 

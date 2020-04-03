@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Mantenere la visibilità dell'integrità del client di Configuration Manager da Intune nel portale di Azure
 ms.date: 01/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 5b243aac-8a1a-4f14-ba3f-5446bb483e92
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3f43d5f18049835af719caaec420a5a7b15516d7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 51a82cd1f811da816053f10c8e8371df278ad1d4
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817143"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596112"
 ---
 # <a name="client-health-with-co-management"></a>Integrità del client con co-gestione
 

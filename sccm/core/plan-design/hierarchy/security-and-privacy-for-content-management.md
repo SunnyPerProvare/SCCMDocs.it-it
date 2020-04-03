@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Ottimizzare la sicurezza e la privacy per la gestione dei contenuti in Configuration Manager
 ms.date: 10/26/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5f38b726-dc00-433a-ba05-5b7dbb0d8e99
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8373f529258d23a93ee0e57cd37d0f825a557f40
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4fa4f89a7bf43ae8d34f5baa339a101a15415dfd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799744"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600133"
 ---
 # <a name="security-and-privacy-for-content-management-in-configuration-manager"></a>Sicurezza e privacy per la gestione dei contenuti in Configuration Manager
 
@@ -25,7 +25,7 @@ Questo articolo contiene informazioni sulla sicurezza e sulla privacy per la ges
 
 
 
-##  <a name="BKMK_Security_ContentManagement"></a> Procedure di sicurezza consigliate per la gestione del contenuto  
+##  <a name="security-best-practices-for-content-management"></a><a name="BKMK_Security_ContentManagement"></a> Procedure di sicurezza consigliate per la gestione del contenuto  
 
 
 #### <a name="advantages-and-disadvantages-of-https-or-http-for-intranet-distribution-points"></a>Vantaggi e svantaggi di HTTPS o HTTP per i punti di distribuzione in Intranet
@@ -106,7 +106,7 @@ Durante la pianificazione della gestione dei contenuti, tenere presente i punti 
 
 
 
-##  <a name="BKMK_Privacy_ContentManagement"></a> Informazioni sulla privacy per la gestione dei contenuti  
+##  <a name="privacy-information-for-content-management"></a><a name="BKMK_Privacy_ContentManagement"></a> Informazioni sulla privacy per la gestione dei contenuti  
 
  Configuration Manager non include dati utente nei file di contenuto, tuttavia un utente amministratore può scegliere di inserirli.  
 

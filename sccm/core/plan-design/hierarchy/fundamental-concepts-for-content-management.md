@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: È possibile usare gli strumenti e le opzioni di Configuration Manager per gestire il contenuto da distribuire.
 ms.date: 12/17/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2588a1c009e81766f85f0e9e0c7ebae8fa3b3ea9
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: c13b94f3ff551aab05d73c9a59df27e20f7ca1d1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405374"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600564"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 

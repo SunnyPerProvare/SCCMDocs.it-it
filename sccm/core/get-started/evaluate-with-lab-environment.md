@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Creare un ambiente lab per valutare l'uso di Configuration Manager nell'organizzazione.
 ms.date: 02/28/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 01b30260-f03a-4851-a549-d1b76e8cfc69
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eb959c9e99c22a0b248c138d755d5a841c12960f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: dd238319ba064f57911eee58e1299e17a2ce5b60
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803382"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601649"
 ---
 # <a name="evaluate-configuration-manager-by-building-your-own-lab-environment"></a>Valutare Configuration Manager creando un proprio ambiente lab
 
@@ -47,7 +47,7 @@ I computer client vengono installati all'interno di Hyper-V. È anche possibile 
 
  Quando si crea questo lab è necessario avere un ambiente di lavoro funzionale. L'ambiente non deve essere tuttavia ottimizzato per fattori come prestazioni del sistema, gestione dello spazio su disco rigido e archiviazione SQL Server.  
 
-##  <a name="BKMK_EvalRec"></a> Letture consigliate prima di iniziare il lab  
+##  <a name="recommended-reading-before-you-build-the-lab"></a><a name="BKMK_EvalRec"></a> Letture consigliate prima di iniziare il lab  
  Molti contenuti sono disponibili in [Documentazione per Configuration Manager](https://docs.microsoft.com/sccm/). Prima di iniziare il lab, è consigliata la lettura degli argomenti di questa libreria elencati di seguito:  
 
 -   Informazioni sui concetti di base che riguardano la console di Configuration Manager e i portali degli utenti finali nonché scenari di esempio sono disponibili in [Introduzione a Configuration Manager](../../core/understand/introduction.md).  

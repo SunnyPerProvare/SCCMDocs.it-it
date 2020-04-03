@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Requisiti per l'installazione di ruoli del sistema del sito e dei client di Configuration Manager in un ambiente di virtualizzazione.
 ms.date: 02/19/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: caff64eb1a4be508ce0486e9180fb9c72fd77805
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: a49b5f73b235f5c90279a871e0a80b4d414eec69
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516147"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601222"
 ---
 # <a name="support-for-virtualization-environments-with-configuration-manager"></a>Supporto per gli ambienti di virtualizzazione per Configuration Manager
 
@@ -34,7 +34,7 @@ Ad esempio, si usa Microsoft Hyper-V Server 2012 per ospitare una macchina virtu
 - Microsoft Hyper-V Server 2012  
 - Windows Server 2012  
 
-### <a name="bkmk_note1"></a> Nota 1: Virtualizzazione annidata
+### <a name="note-1-nested-virtualization"></a><a name="bkmk_note1"></a> Nota 1: Virtualizzazione annidata
 
 Configuration Manager non supporta la [virtualizzazione annidata](https://docs.microsoft.com/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), introdotta con Windows Server 2016.
 
@@ -51,7 +51,7 @@ Configuration Manager non può gestire macchine virtuali se sono offline. Non è
 
 Nessuna considerazione speciale è attribuita alle macchine virtuali. Ad esempio, Configuration Manager potrebbe non riuscire a determinare se un aggiornamento deve essere nuovamente applicato a un'immagine di macchina virtuale se la macchina virtuale è stata arrestata e riavviata senza salvare lo stato della macchina virtuale a cui è stato applicato l'aggiornamento.  
 
-##  <a name="bkmk_Azure"></a> Macchine virtuali di Microsoft Azure  
+##  <a name="microsoft-azure-virtual-machines"></a><a name="bkmk_Azure"></a> Macchine virtuali di Microsoft Azure  
 
 Configuration Manager può essere eseguito in macchine virtuali di Azure così come viene eseguito in locale all'interno del data center. Usare Configuration Manager con macchine virtuali di Azure negli scenari seguenti:  
 

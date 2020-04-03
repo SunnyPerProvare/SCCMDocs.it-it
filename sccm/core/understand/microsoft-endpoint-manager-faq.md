@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Domande frequenti su Microsoft Endpoint Configuration Manager
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: be276b34-e283-4386-8b45-5629e431c50d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4c9c1014a153048ffd83ae1e0a5385c2cfcdc5fb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4649f0b0173f0b18500432d677da0d60e60ccbe0
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825796"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598130"
 ---
 # <a name="microsoft-endpoint-configuration-manager-faq"></a>Domande frequenti per Microsoft Endpoint Configuration Manager
 

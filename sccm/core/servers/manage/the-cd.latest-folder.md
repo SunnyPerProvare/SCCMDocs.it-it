@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sul processo che fornisce aggiornamenti per il prodotto dalla console di Configuration Manager.
 ms.date: 03/07/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0711ede4beaa57b9382c30e8187cab40671b59a7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7c1525cf890944ad19250bb1b7298eab1cbf363e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826204"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590353"
 ---
 # <a name="the-cdlatest-folder-for-configuration-manager"></a>Cartella CD.Latest per Configuration Manager
 

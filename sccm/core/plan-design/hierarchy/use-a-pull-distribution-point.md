@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione pull con Configuration Manager.
 ms.date: 05/06/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dfceea40588f533cb2a29992f7236598380e140d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f7391d17acd4a6db5c232a609825389f0e370c6f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799591"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599901"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 

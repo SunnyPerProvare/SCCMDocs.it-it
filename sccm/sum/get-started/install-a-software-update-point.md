@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-ms.openlocfilehash: c46e20e2a74e18edc7fdc5a10a2103a52785cc44
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 1951b095523158bc182a1458234e943d67548cf4
+ms.sourcegitcommit: 43a5e002fcd66281e2f6ed888d9c22140d0a543b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405154"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80395658"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
@@ -93,7 +93,7 @@ ms.locfileid: "79405154"
     > [!NOTE]  
     >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: utilizzare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta usata per connettersi al server WSUS.  
+-   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: utilizzare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio `https://WSUSServer:8531`, dove 8531 è la porta usata per connettersi al server WSUS.  
 
 -   **Non eseguire la sincronizzazione da Microsoft Update o origine dati upstream**: utilizzare questa impostazione per sincronizzare manualmente gli aggiornamenti software quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](synchronize-software-updates-disconnected.md).  
 

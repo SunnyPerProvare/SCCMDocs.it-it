@@ -10,12 +10,12 @@ ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cb4179efbb0a8ad463a7c7604a0ad7b15d7bef95
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 0b532214d74c79428d48e988ff233357dd9e2a21
+ms.sourcegitcommit: d1009600a042b1759129805608fd65817984f50c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406034"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80526494"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
@@ -317,7 +317,7 @@ Dopo aver installato il client di Configuration Manager, non viene annullata la 
 
 ### <a name="install-the-configuration-manager-client-by-using-intune"></a>Installare il client di Configuration Manager con Intune
 
-1. In Intune [aggiungere un'app line-of-business di Windows](https://docs.microsoft.com/intune/lob-apps-windows) contenente il file di installazione client di Configuration Manager **CCMSetup.msi**. Questo file è disponibile nella cartella `\bin\i386` della directory di installazione di Configuration Manager nel server del sito.  
+1. In Intune [aggiungere un'app line-of-business di Windows](https://docs.microsoft.com/mem/intune/apps/lob-apps-windows) contenente il file di installazione client di Configuration Manager **CCMSetup.msi**. Questo file è disponibile nella cartella `\bin\i386` della directory di installazione di Configuration Manager nel server del sito.  
 
 2. In Autore del software Microsoft Intune immettere i parametri della riga di comando. Ad esempio, usare questo comando con un client tradizionale in una rete Intranet:  
 
@@ -326,7 +326,7 @@ Dopo aver installato il client di Configuration Manager, non viene annullata la 
     > [!NOTE]  
     > Per una riga di comando di esempio da usare con un client Windows 10 moderno che usa l'autenticazione di Azure AD, vedere [Come preparare i dispositivi basati su Internet per la co-gestione](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client).  
 
-3. [Assegnare l'app](https://docs.microsoft.com/intune/deploy-use/deploy-apps-in-microsoft-intune) a un gruppo di computer Windows registrati.  
+3. [Assegnare l'app](https://docs.microsoft.com/mem/intune/apps/apps-deploy) a un gruppo di computer Windows registrati.  
 
 ## <a name="os-image-installation"></a><a name="BKMK_ClientImage"></a> Installazione dell'immagine del sistema operativo
 

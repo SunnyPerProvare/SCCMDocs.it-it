@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come configurare i componenti del sito per modificare il comportamento dei ruoli del sistema del sito e la creazione di report sullo stato del sito.
 ms.date: 10/26/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5fccbbeb-0faa-4943-83c2-e67db62d392d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 932d0aa50b02f422ca335c60cac0a9db5357e1d0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b15a656a15952799ba7330d2e432bd70f129f39b
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798425"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592809"
 ---
 # <a name="site-components-for-configuration-manager"></a>Componenti del sito per Configuration Manager
 
@@ -112,7 +112,7 @@ Specificare i dettagli dell'account e del server di posta elettronica per abilit
 Per altre informazioni, vedere [Usare gli avvisi e il sistema di stato](/sccm/core/servers/manage/use-alerts-and-the-status-system).
 
 
-### <a name="bkmk_colleval"></a> Valutazione dell'appartenenza alla raccolta  
+### <a name="collection-membership-evaluation"></a><a name="bkmk_colleval"></a> Valutazione dell'appartenenza alla raccolta  
 
 Usare questo componente per impostare la frequenza con cui l'appartenenza alla raccolta viene valutata in modo incrementale. La valutazione incrementale aggiorna l'appartenenza alla raccolta solo con risorse nuove o modificate.  
 
@@ -120,7 +120,7 @@ Per altre informazioni, vedere [Procedure consigliate per le raccolte](/sccm/cor
 
 
 
-##  <a name="BKMK_ServiceMgr"></a> Usare Configuration Manager Service Manager per gestire i componenti del sito  
+##  <a name="use-the-configuration-manager-service-manager-to-manage-site-components"></a><a name="BKMK_ServiceMgr"></a> Usare Configuration Manager Service Manager per gestire i componenti del sito  
 
 È possibile usare Configuration Manager Service Manager per controllare i servizi di Configuration Manager e per visualizzare lo stato di qualsiasi servizio o thread di lavoro di Configuration Manager. Questi servizi e thread sono definiti collettivamente componenti di Configuration Manager. I componenti di Configuration Manager presentano le caratteristiche riportate di seguito:  
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come pubblicare i siti di Configuration Manager in Active Directory Domain Services.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 17cf034f-eaff-43ce-bc8e-917213c1db74
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: bc8028f5634b873afcafd3b9c5553c80b48a5516
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 77ca6711f86250f4a6f937d919893cf95e022567
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798486"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592829"
 ---
 # <a name="publish-site-data-for-configuration-manager"></a>Pubblicare i dati del sito per Configuration Manager
 

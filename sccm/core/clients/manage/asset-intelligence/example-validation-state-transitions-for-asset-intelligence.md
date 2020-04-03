@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Vedere le transizioni di esempio dello stato di convalida per Asset Intelligence in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 6230a6e5-a1f6-459b-84f1-07fbde0e70f0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1891cef51c1400f4cce66e635d351a536f31d413
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2af9243d6720d5821c641e5c80589457a33b638e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824742"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595241"
 ---
 # <a name="example-validation-state-transitions-for-asset-intelligence"></a>Transizioni dello stato di convalida di esempio per Asset Intelligence
 
@@ -23,14 +23,14 @@ ms.locfileid: "75824742"
 
 Gli stati di convalida di Asset Intelligence in Configuration Manager non sono statici e possono essere modificati da azioni di amministrazione eseguite per modificare i dati archiviati nel catalogo di Asset Intelligence. In questo argomento vengono descritti esempi relativi alle possibili transizioni dello stato di convalida.
 
-##  <a name="BKMK_UncategorizedIsCategorized"></a> L'elemento del catalogo senza categoria viene categorizzato dall'utente amministratore  
+##  <a name="uncategorized-catalog-item-is-categorized-by-the-administrative-user"></a><a name="BKMK_UncategorizedIsCategorized"></a> L'elemento del catalogo senza categoria viene categorizzato dall'utente amministratore  
 
 |**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
 |**Senza categoria**|Un titolo di software di inventario che non è stato categorizzato in precedenza da System Center Online o che l'utente amministratore ha inserito nel catalogo di Asset Intelligence.|  
 |**Senza categoria** a **utentedefinito**|L'elemento senza categoria viene categorizzato dall'utente amministratore.|  
 
-##  <a name="BKMK_CategorizedIsReCategorized"></a> L'elemento del catalogo categorizzato viene categorizzato di nuovo dall'utente amministratore  
+##  <a name="categorized-catalog-item-is-recategorized-by-the-administrative-user"></a><a name="BKMK_CategorizedIsReCategorized"></a> L'elemento del catalogo categorizzato viene categorizzato di nuovo dall'utente amministratore  
 
 |**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
@@ -40,7 +40,7 @@ Gli stati di convalida di Asset Intelligence in Configuration Manager non sono s
 > [!NOTE]  
 >  Dato che le informazioni di categorizzazione ottenute da System Center Online vengono archiviate nel database e non possono essere eliminate, l'utente amministratore può ripristinare la categorizzazione di System Center Online in un secondo momento.  
 
-##  <a name="BKMK_UserDefinedIsRecategorized"></a> L'elemento del catalogo definito dall'utente è categorizzato di nuovo da System Center Online  
+##  <a name="user-defined-catalog-item-is-recategorized-by-system-center-online"></a><a name="BKMK_UserDefinedIsRecategorized"></a> L'elemento del catalogo definito dall'utente è categorizzato di nuovo da System Center Online  
 
 |**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
@@ -54,7 +54,7 @@ Gli stati di convalida di Asset Intelligence in Configuration Manager non sono s
 > [!NOTE]  
 >  Dato che le informazioni di categorizzazione ottenute da System Center Online vengono archiviate nel database e non possono essere eliminate, l'utente amministratore può ripristinare la categorizzazione di System Center Online in un secondo momento.  
 
-##  <a name="BKMK_UncategorizedIsSubmitted"></a> L'elemento del catalogo senza categoria viene inviato a System Center Online per la categorizzazione  
+##  <a name="uncategorized-catalog-item-is-submitted-to-system-center-online-for-categorization"></a><a name="BKMK_UncategorizedIsSubmitted"></a> L'elemento del catalogo senza categoria viene inviato a System Center Online per la categorizzazione  
 
 |**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
@@ -62,7 +62,7 @@ Gli stati di convalida di Asset Intelligence in Configuration Manager non sono s
 |**Senza categoria** a **In sospeso**|L'elemento senza categoria viene inviato a System Center Online per la categorizzazione dall'utente amministratore|  
 |**In sospeso** a **Convalidato**|L'elemento è categorizzato da System Center Online. L'utente amministratore importa l'elemento nel catalogo di Asset Intelligence tramite un aggiornamento in blocco del catalogo oppure una sincronizzazione del catalogo di Asset Intelligence. Entrambe le operazioni sono disponibili mediante il ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.|  
 
-##  <a name="BKMK_UserDefinedIsSubmitted"></a> L'elemento del catalogo definito dall'utente viene inviato a System Center Online per la categorizzazione  
+##  <a name="user-defined-catalog-item-is-submitted-to-system-center-online-for-categorization"></a><a name="BKMK_UserDefinedIsSubmitted"></a> L'elemento del catalogo definito dall'utente viene inviato a System Center Online per la categorizzazione  
 
 |**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  

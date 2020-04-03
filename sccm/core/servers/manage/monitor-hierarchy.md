@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come monitorare l'infrastruttura in Configuration Manager usando l'area di lavoro Monitoraggio della console.
 ms.date: 06/06/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 007dbb73-18a7-48a3-a489-97cf9fc4f140
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 93b2ab22b0503dd673a8f0ad85da91449e327185
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: bb9b3ab9aca729989a31fa28947acaad8b07544a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794658"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590844"
 ---
 # <a name="monitor-the-hierarchy"></a>Monitorare la gerarchia
 
@@ -28,7 +28,7 @@ Per monitorare la gerarchia in Configuration Manager, usare l'area di lavoro **M
 
 Per il monitoraggio, oltre alla console di Configuration Manager, usare le funzionalità seguenti:
 
-- [Creazione di report](/sccm/core/servers/manage/reporting)
+- [Introduzione alla creazione di report](/configmgr/core/servers/manage/introduction-to-reporting)
 - [File di log](/sccm/core/plan-design/hierarchy/log-files).  
 
 Quando si effettua il monitoraggio di siti, cercare dei segnali che indichino problemi che richiedono un intervento. Ad esempio:  
@@ -52,7 +52,7 @@ Quando si effettua il monitoraggio di siti, cercare dei segnali che indichino pr
 Se le attività di monitoraggio danno segni di problemi, analizzare l'origine dell'eventuale problema, quindi risolverlo rapidamente per ridurre al minimo il rischio di un errore del sito.  
 
 
-## <a name="BKMK_MonintorMgmtTasks"></a> Monitorare le comuni attività di gestione
+## <a name="monitor-common-management-tasks"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorare le comuni attività di gestione
 
 Configuration Manager include una funzionalità di monitoraggio predefinita all'interno della console.
 
@@ -99,7 +99,7 @@ Per altre informazioni, vedere [Monitorare l'utilizzo delle app con la misurazio
 Per altre informazioni, vedere [Monitorare gli aggiornamenti software](/sccm/sum/deploy-use/monitor-software-updates).  
 
 
-## <a name="BKMK_SH_Node"></a> Monitorare la gerarchia di siti
+## <a name="monitor-the-site-hierarchy"></a><a name="BKMK_SH_Node"></a> Monitorare la gerarchia di siti
 
 Il nodo **Gerarchia siti** dell'area di lavoro **Monitoraggio** offre una panoramica della gerarchia e dei collegamenti tra siti di Configuration Manager. È possibile utilizzare due viste:  
 

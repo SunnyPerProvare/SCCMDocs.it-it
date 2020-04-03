@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Differenze di gestione per LTSB di System Center Configuration Manager.
 ms.date: 05/01/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8da2887a-fd8e-438c-b926-849c121f7fdf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 43f9e84c7a19f2567a7ebd0a4f9cc310b47d6ad7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f06cc0d125270c7d6a47f0626c812c8e2e89f5c3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791936"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598143"
 ---
 # <a name="manage-the-long-term-servicing-branch-of-configuration-manager"></a>Gestire Long Term Servicing Branch di Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Come rimuovere Desktop Analytics dall'account Azure
 ms.date: 10/17/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 6e7d2850-b0af-497e-bbc1-bfc2a7420a7a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e83ac7bc05237618a9f013f88cbdfa91379651b3
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 4078129de25c7a4644e5ece4948060329d10769b
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76916700"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597793"
 ---
 # <a name="how-to-close-your-account"></a>Come chiudere l'account
 

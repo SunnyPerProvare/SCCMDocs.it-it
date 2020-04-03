@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui livelli di sicurezza in Configuration Manager.
 ms.date: 10/22/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 035b7f73-8b78-4ed1-835e-a31f9a5c4a02
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c45066b24fb17889a8278b97393e2905fe7d9b02
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b3a257597d618e1addda490386b98a3a1af9c86c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792115"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598335"
 ---
 # <a name="fundamentals-of-security-for-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di Configuration Manager
 
@@ -28,7 +28,7 @@ Questo articolo illustra i componenti di sicurezza fondamentali seguenti di qual
 - [Account e gruppi di Configuration Manager](#bkmk_accounts)
 - [Privacy](#bkmk_privacy)
 
-## <a name="bkmk_layers"></a> Livelli di sicurezza
+## <a name="security-layers"></a><a name="bkmk_layers"></a> Livelli di sicurezza
 
 La sicurezza in Configuration Manager è costituita dai livelli seguenti: 
 - [Sicurezza di rete e del sistema operativo Windows](#bkmk_layer-windows)
@@ -37,7 +37,7 @@ La sicurezza in Configuration Manager è costituita dai livelli seguenti:
 - [Provider SMS](#bkmk_layer-provider)
 - [Autorizzazioni per il database del sito](#bkmk_layer-db)
 
-#### <a name="bkmk_layer-windows"></a> Sicurezza di rete e del sistema operativo Windows
+#### <a name="windows-os-and-network-security"></a><a name="bkmk_layer-windows"></a> Sicurezza di rete e del sistema operativo Windows
 Il primo livello è offerto dalle funzionalità di sicurezza di Windows per il sistema operativo e la rete. Questo livello include i componenti seguenti:  
 
 -   Condivisione di file per il trasferimento di file tra componenti di Configuration Manager  
@@ -54,15 +54,15 @@ Il primo livello è offerto dalle funzionalità di sicurezza di Windows per il s
 
 -   Protezione account di Windows, inclusi alcuni gruppi creati da Configuration Manager durante l'installazione  
 
-#### <a name="bkmk_layer-network"></a> Infrastruttura di rete
+#### <a name="network-infrastructure"></a><a name="bkmk_layer-network"></a> Infrastruttura di rete
 
 Componenti di sicurezza aggiuntivi, ad esempio firewall e identificazione delle intrusioni, contribuiscono alla difesa dell'intero ambiente. I certificati emessi dalle implementazioni di infrastruttura a chiave pubblica (PKI) standard per il settore consentono di offrire autenticazione, firma e crittografia.  
 
-#### <a name="bkmk_layer-cm"></a> Controlli di sicurezza di Configuration Manager
+#### <a name="configuration-manager-security-controls"></a><a name="bkmk_layer-cm"></a> Controlli di sicurezza di Configuration Manager
 
 Oltre alla sicurezza offerta dall'infrastruttura di rete e server Windows, Configuration Manager controlla l'accesso alla propria console e alle proprie risorse in diversi modi. Per impostazione predefinita, solo gli amministratori locali hanno i diritti per i file e le chiavi del Registro di sistema necessari per la console di Configuration Manager nei computer in cui è installata.  
 
-#### <a name="bkmk_layer-provider"></a> Provider SMS
+#### <a name="sms-provider"></a><a name="bkmk_layer-provider"></a> Provider SMS
 
 Il livello successivo di protezione si basa sull'accesso tramite Windows Management Instrumentation (WMI), in particolare sul provider SMS. Il provider SMS è un componente di Configuration Manager che concede a un utente l'accesso per eseguire query nel database del sito per informazioni. Per impostazione predefinita, l'accesso al provider è limitato ai membri del gruppo SMS Admins locale. Questo gruppo contiene inizialmente solo l'utente che ha installato Configuration Manager. Per concedere altre autorizzazioni account al repository Common Information Model (CIM) e al provider SMS, aggiungere altri account al gruppo SMS Admins.  
 
@@ -70,13 +70,13 @@ A partire dalla versione 1810, è possibile specificare il livello di autenticaz
 
 Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).
 
-#### <a name="bkmk_layer-db"></a> Autorizzazioni per il database del sito
+#### <a name="site-database-permissions"></a><a name="bkmk_layer-db"></a> Autorizzazioni per il database del sito
 
 Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel database del sito. Per impostazione predefinita, l'account di sistema locale e l'account utente usato per l'installazione di Configuration Manager possono amministrare tutti gli oggetti nel database di sito. Concedere e limitare le autorizzazioni per altri utenti amministratori nella console di Configuration Manager usando l'amministrazione basata su ruoli.  
 
 
 
-## <a name="bkmk_rba"></a> Amministrazione basata su ruoli  
+## <a name="role-based-administration"></a><a name="bkmk_rba"></a> Amministrazione basata su ruoli  
 
  Configuration Manager usa l'amministrazione basata su ruoli per consentire la protezione di oggetti quali raccolte, distribuzioni e siti. Questo modello di amministrazione definisce e gestisce centralmente le impostazioni di accesso di protezione a livello di gerarchia per tutti i siti e le impostazioni del sito. 
 
@@ -90,7 +90,7 @@ Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel
 
 
 
-## <a name="bkmk_endpoints"></a> Protezione degli endpoint client  
+## <a name="securing-client-endpoints"></a><a name="bkmk_endpoints"></a> Protezione degli endpoint client  
 
  Configuration Manager protegge la comunicazione dei client ai ruoli del sistema del sito usando certificati autofirmati o PKI oppure token di Azure Active Directory (Azure AD). Alcuni scenari richiedono l'uso di certificati PKI. Ad esempio, la [gestione client basata su Internet](/sccm/core/clients/manage/plan-internet-based-client-management) e i [client dispositivo mobile](/sccm/mdm/plan-design/plan-on-premises-mdm).  
 
@@ -100,7 +100,7 @@ Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel
 
 
 
-## <a name="bkmk_accounts"></a> Account e gruppi di Configuration Manager  
+## <a name="configuration-manager-accounts-and-groups"></a><a name="bkmk_accounts"></a> Account e gruppi di Configuration Manager  
 
  Configuration Manager usa l'account di sistema locale per la maggior parte delle operazioni del sito. Per alcune attività di gestione potrebbe essere necessario creare e gestire altri account. Durante l'installazione, Configuration Manager crea diversi gruppi predefiniti e ruoli di SQL Server. Potrebbe essere necessario aggiungere manualmente account computer o account utente ai gruppi e ai ruoli di SQL Server predefiniti.  
 
@@ -108,7 +108,7 @@ Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel
 
 
 
-## <a name="bkmk_privacy"></a> Privacy  
+## <a name="privacy"></a><a name="bkmk_privacy"></a> Privacy  
 
  Prima di implementare Configuration Manager, valutare i requisiti relativi alla tutela della privacy. Anche se i prodotti di gestione aziendale offrono molti vantaggi derivanti dalla possibilità di gestire un numero elevato di client, il software potrebbe influire sulla privacy degli utenti all'interno dell'organizzazione. Configuration Manager include molti strumenti per la raccolta dei dati e il monitoraggio dei dispositivi. Alcuni strumenti potrebbero avere implicazioni a livello di privacy nell'organizzazione.  
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1902.
 ms.date: 04/11/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 881c66f200b3e64486bbe4a66ef9fa3af0aa8fa6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 0f10c53ae443151750dd56898968b8af2d8c906e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796371"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591813"
 ---
 # <a name="checklist-for-installing-update-1902-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1902 di Configuration Manager
 

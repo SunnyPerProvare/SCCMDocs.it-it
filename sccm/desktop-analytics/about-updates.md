@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sugli aggiornamenti della sicurezza e delle funzionalità in Desktop Analytics.
 ms.date: 08/21/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 14ae894c-26fb-4fe3-b51d-e80700122df4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 100c6d392fd9602277b00857aba3426f5f7f2bab
-ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
+ms.openlocfilehash: 1c9e3f249b56b91d593b9c247cab1a0ce50d8b6e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75951674"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597907"
 ---
 # <a name="updates-in-desktop-analytics"></a>Aggiornamenti in Desktop Analytics
 

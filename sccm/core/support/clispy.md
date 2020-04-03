@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Client Spy per risolvere i problemi relativi a distribuzione software, inventario e misurazione del software nei client Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 60575413-44fe-43bb-bcfb-39ec5ed5055b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 90930e6db69403dd19c595e4b3cf16edba14f0c0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 63201685915118d77d497a88ebf7eae935c09434
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793035"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604255"
 ---
 # <a name="client-spy"></a>Client Spy
 
@@ -93,7 +93,7 @@ Configurare le impostazioni nelle quattro schede seguenti:
 - [Software Distribution Pending Executions](#bkmk_pending-exec) (Esecuzioni in sospeso di distribuzione software)
 
 
-### <a name="bkmk_exec-requests"></a> Software Distribution Execution Requests (Richieste di esecuzione della distribuzione software)
+### <a name="software-distribution-execution-requests"></a><a name="bkmk_exec-requests"></a> Software Distribution Execution Requests (Richieste di esecuzione della distribuzione software)
 
 Questa scheda visualizza tutte le distribuzioni esistenti, incluse le distribuzioni indirizzate a dispositivi e a utenti.
 
@@ -126,7 +126,7 @@ Se la richiesta eseguita è una richiesta di download, visualizza anche il numer
 > Usa icone diverse a seconda dello stato di una richiesta eseguita.
 
 
-### <a name="bkmk_history"></a> Software Distribution History (Cronologia delle distribuzioni software)
+### <a name="software-distribution-history"></a><a name="bkmk_history"></a> Software Distribution History (Cronologia delle distribuzioni software)
 
 Questa scheda contiene informazioni su tutti i programmi eseguiti in precedenza. Queste informazioni vengono archiviate nel Registro di sistema.
 
@@ -142,7 +142,7 @@ L'ID del pacchetto e il nome del pacchetto per ogni sottoalbero di pacchetti vis
 Il codice errore e il motivo dell'errore sono vuoti quando un programma è stato eseguito correttamente.
 
 
-### <a name="bkmk_cache-info"></a> Software Distribution Cache Information (Informazioni sulla cache di distribuzione software)
+### <a name="software-distribution-cache-information"></a><a name="bkmk_cache-info"></a> Software Distribution Cache Information (Informazioni sulla cache di distribuzione software)
 
 #### <a name="cache-config"></a>Cache Config (Configurazione cache)
 Contiene informazioni sulla cache del client Configuration Manager. Queste informazioni includono il percorso della cache, le dimensioni della cache e se è attualmente in uso. 
@@ -162,7 +162,7 @@ Contiene un sottoalbero di tutti gli elementi attualmente nella cache. Ogni elem
 Si tratta degli elementi che il client sta attualmente scaricando. Per ognuno sono indicate le stesse informazioni visualizzate per gli elementi nella cache e il numero di kilobyte scaricati. 
 
 
-### <a name="bkmk_pending-exec"></a> Software Distribution Pending Executions (Esecuzioni in sospeso di distribuzione software)
+### <a name="software-distribution-pending-executions"></a><a name="bkmk_pending-exec"></a> Software Distribution Pending Executions (Esecuzioni in sospeso di distribuzione software)
 
 Questa scheda contiene informazioni che illustrano in dettaglio le distribuzioni necessarie passate e future e un elenco delle distribuzioni disponibili.
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulla funzionalità di Attestazione dell'integrità del dispositivo visibile nella console di Configuration Manager.
 ms.date: 10/05/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 91f9de33-b277-4500-acd6-e7d90a2947c9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c15a6aa2084d9ed296909cbc9c5a1b9b9fd5b9fd
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 9917ec8a1ed2072903276de438f49d3f783a1284
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405774"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591199"
 ---
 # <a name="health-attestation-for-configuration-manager"></a>Attestazione dell'integrità per Configuration Manager
 

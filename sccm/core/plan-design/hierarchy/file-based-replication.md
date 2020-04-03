@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come Configuration Manager usa la replica basata su file per trasferire i dati tra i siti all'interno della gerarchia
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 65fcc1a8-214e-4dd9-8093-de4cd4a00442
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 649a5a87be5608f01702c2b78f2b31f93aae77f8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: faaf46f16f25711e866d0b58c543f5ebf35909d9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800254"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600600"
 ---
 # <a name="file-based-replication"></a>replica basata su file
 
@@ -25,7 +25,7 @@ Configuration Manager usa la replica basata su file per trasferire i dati basati
 
 La comunicazione tra siti basata su file usa il protocollo *Server Message Block* (SMB) sulla porta TCP/IP 445. Per controllare la quantità di dati che il sito trasferisce attraverso la rete, specificare la limitazione della larghezza di banda e la modalità a impulsi. Usare le pianificazioni per controllare quando inviare i dati attraverso la rete.  
 
-## <a name="bkmk_routes"></a> Route
+## <a name="routes"></a><a name="bkmk_routes"></a> Route
 
 Le informazioni seguenti possono essere utili per configurare e usare le route di replica file.  
 

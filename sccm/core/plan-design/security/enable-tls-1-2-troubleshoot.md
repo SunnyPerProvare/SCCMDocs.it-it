@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Vengono descritti i problemi comuni relativi all'abilitazione di Transport Layer Security (TLS) 1.2
 ms.date: 12/13/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 15083f28-8ff2-4e23-9f5e-b5dbd0859839
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7d18b06910c58258dd9f478ec46fd1736b44809b
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 10f067ef810065562a64e4352b0e65862de5b6f5
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515773"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80593054"
 ---
 # <a name="common-issues-when-enabling-tls-12"></a>Problemi comuni relativi all'abilitazione di TLS 1.2
 

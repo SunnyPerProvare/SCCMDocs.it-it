@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questo diagramma per avviare la risoluzione dei problemi di reinizializzazione della replica SQL per i dati del sito in una gerarchia di Configuration Manager
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 19741d45-2d42-438e-a9f3-15bb365d63ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 50d50bdc15d0aac73126c68ed2e6e79f2d0a9379
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2bc4177b39c0ca1c8e6f58511368ed15fc8cb342
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826272"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590430"
 ---
 # <a name="troubleshoot-site-data-reinit"></a>Risolvere i problemi di reinizializzazione dei dati del sito
 

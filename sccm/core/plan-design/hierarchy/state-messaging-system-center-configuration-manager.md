@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Descrizioni dei messaggi di stato nelle versioni supportate di Configuration Manager.
 ms.date: 03/21/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f04c0a71-57bc-4443-a47c-592373050d04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b75d7a710c84dc946c9661a03e774e6fa387a00
-ms.sourcegitcommit: 13bdc08cfb52309f1e14875f17cd320c7c1b15ce
+ms.openlocfilehash: 43a730a79600e4d4542d6d438283f756cd4769e3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80112670"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600002"
 ---
 # <a name="state-messages-in-configuration-manager"></a>Messaggi di stato in Configuration Manager 
 

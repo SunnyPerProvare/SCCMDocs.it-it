@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su dispositivi, driver e app in Desktop Analytics.
 ms.date: 01/16/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: d07198cf-49bb-4712-8c63-063b4302cc11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 542c73dc329dc5c349b410694cedc9353075180e
-ms.sourcegitcommit: 73b30a26db1c1566195c109eeb6e709707ca9c5a
+ms.openlocfilehash: 44dcbd29ce7e34d7c69bd50af8a46ef625430960
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76309353"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597952"
 ---
 # <a name="assets-in-desktop-analytics"></a>Asset in Desktop Analytics
 
@@ -51,7 +51,7 @@ Configurare l'**Importanza** delle app impostando una delle categorie seguenti:
 
 Selezionare l'app dall'elenco e selezionare **Modifica**. Questa azione visualizza i dettagli per l'app. Selezionare il menu a discesa **Importanza** e impostare un valore. È anche possibile assegnare un **Proprietario**. Se si apportano modifiche, selezionare **Salva**.
 
-### <a name="a-namebkmk_plan-autoapp--automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" /> Decisione di aggiornamento automatico delle app di sistema e dello Store
+### <a name="automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" /> Decisione di aggiornamento automatico delle app di sistema e dello Store
 
 <!-- 3587232 -->
 Identificare l'**Importanza** e la **Decisione di aggiornamento** è fondamentale per tutte le app importanti nel flusso di lavoro di Desktop Analytics. Per facilitare l'annotazione di queste app, alcuni tipi di app vengono contrassegnati automaticamente come *Non importante*. La decisione di aggiornamento del piano di distribuzione per queste app è contrassegnata anche con *Pronto*. Le app seguenti sono compatibili e continueranno a funzionare dopo l'aggiornamento di Windows:

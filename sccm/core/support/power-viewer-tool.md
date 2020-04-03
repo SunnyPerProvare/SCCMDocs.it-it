@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Power Viewer Tool per visualizzare lo stato della funzionalità di gestione dell'alimentazione su un client Gestione configurazione.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8143e3bf-d6bd-4c69-aec1-e6989cf2ecd9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c58839778a17a139a53e8893104f7d54375143cb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 1c8aa9a53228ab71a85f158159bbe407417592a1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792688"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590148"
 ---
 # <a name="power-viewer-tool"></a>Power Viewer Tool
 

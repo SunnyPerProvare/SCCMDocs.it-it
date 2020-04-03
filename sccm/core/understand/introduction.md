@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Concetti di base relativi a Microsoft Endpoint Configuration Manager.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 3343eccf-bf09-41cd-9e68-03e893c7f904
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6870e9f9f9da3e4e2202f0d4298c0f583320996a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: bd3f5128e71ebcab4c4601dee2d982fa4e6e5db4
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792044"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598242"
 ---
 # <a name="what-is-configuration-manager"></a>Che cos'è Configuration Manager?
 
@@ -77,7 +77,7 @@ Per il corretto funzionamento di Configuration Manager in un ambiente di produzi
 
 ## <a name="user-interfaces"></a>Interfacce utente
 
-### <a name="BKMK_Console"></a> Console di Configuration Manager
+### <a name="the-configuration-manager-console"></a><a name="BKMK_Console"></a> Console di Configuration Manager
 
 Dopo aver installato Configuration Manager usare la console di Configuration Manager per configurare siti e client e per eseguire e monitorare le attività di gestione. Questa console è il punto di amministrazione principale e consente di gestire più siti.  
 
@@ -85,7 +85,7 @@ Dopo aver installato Configuration Manager usare la console di Configuration Man
 
 Per altre informazioni, vedere [Usare la console di Configuration Manager](/configmgr/core/servers/manage/admin-console).
 
-### <a name="BKMK_ApplicationCatalog"></a> Software Center
+### <a name="software-center"></a><a name="BKMK_ApplicationCatalog"></a> Software Center
 
 **Software Center** è un'applicazione che viene installata automaticamente al momento dell'installazione del client di Configuration Manager in un dispositivo Windows. Gli utenti usano Software Center per richiedere e installare il software distribuito. Con Software Center, gli utenti possono eseguire le operazioni seguenti:  
 

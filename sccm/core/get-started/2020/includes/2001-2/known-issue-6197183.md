@@ -2,17 +2,17 @@
 author: aczechowski
 ms.author: aaroncz
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: include
 ms.date: 02/03/2020
-ms.openlocfilehash: bc4f8e172481af267548a4453748a46120e25fde
-ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
+ms.openlocfilehash: 23432109ddd14260e3d3da772f80b6a268fd96c9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76978716"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80603866"
 ---
-### <a name="ki_coll"></a> Non è possibile creare o modificare alcune raccolte
+### <a name="cant-create-or-edit-some-collections"></a><a name="ki_coll"></a> Non è possibile creare o modificare alcune raccolte
 
 <!--6197183-->
 In questa versione del ramo Technical Preview non è possibile creare una nuova raccolta. Non è inoltre possibile modificare le proprietà di una raccolta di utenti esistente.

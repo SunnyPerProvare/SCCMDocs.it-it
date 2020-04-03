@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare Configuration Manager per la conformità a requisiti internazionali specifici.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 46dd9cb2-a812-4b6a-a747-b840f92fef8b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: da46580c67d916e8c7e48978bc57f067eec28d2a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 05e90466ec3ee9529e4eb770839347ad7ac94447
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800135"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600554"
 ---
 # <a name="international-support-in-configuration-manager"></a>Supporto internazionale in Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Ottimizzare protezione e privacy per l'amministrazione del sito in Configuration Manager
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fba51730cdf6d293af3d073b346b99916bac6672
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 346591919b035937840a9264fc46a05167ea2b61
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799727"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600106"
 ---
 # <a name="security-and-privacy-for-site-administration-in-configuration-manager"></a>Protezione e privacy per l'amministrazione del sito in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75799727"
 
 Questo articolo contiene informazioni sulla privacy per i siti e la gerarchia di Configuration Manager.
 
-## <a name="BKMK_Security_Sites"></a> Indicazioni sulla sicurezza per l'amministrazione del sito
+## <a name="security-guidance-for-site-administration"></a><a name="BKMK_Security_Sites"></a> Indicazioni sulla sicurezza per l'amministrazione del sito
 
 Usare le seguenti indicazioni per proteggere i siti e la gerarchia di Configuration Manager.  
 
@@ -172,7 +172,7 @@ Per altre informazioni sulle diverse tecnologie di riattivazione LAN, vedere [Pi
 Quando possibile, usare un server di posta elettronica che supporti l'accesso autenticato. Usare l'account computer del server del sito per l'autenticazione. Se è necessario specificare un account utente per l'autenticazione, utilizzare un account che disponga dei privilegi minimi.  
 
 
-## <a name="BKMK_Security_SiteServer"></a> Indicazioni sulla sicurezza per il server del sito
+## <a name="security-guidance-for-the-site-server"></a><a name="BKMK_Security_SiteServer"></a> Indicazioni sulla sicurezza per il server del sito
 
 Usare le seguenti indicazioni per proteggere il server del sito di Configuration Manager.  
 
@@ -196,7 +196,7 @@ Per altre informazioni, vedere [Installare un sito secondario](/sccm/core/server
 Assicurarsi di configurare correttamente le autorizzazioni dell'unità di sistema prima di installare il primo ruolo del sistema del sito in un server. Ad esempio, `C:\SMS_CCM` eredita le autorizzazioni da `C:\`. Se la radice dell'unità non è protetta correttamente, gli utenti con diritti limitati potrebbero essere in grado di accedere o modificare il contenuto nella cartella Configuration Manager.
 
 
-## <a name="BKMK_Security_SQLServer"></a> Indicazioni sulla sicurezza per SQL Server
+## <a name="security-guidance-for-sql-server"></a><a name="BKMK_Security_SQLServer"></a> Indicazioni sulla sicurezza per SQL Server
 
 Configuration Manager usa SQL Server come database back-end. Se il database è compromesso, gli utenti malintenzionati potrebbero bypassare Configuration Manager. Se accedono a SQL Server direttamente, possono avviare attacchi attraverso Configuration Manager. Gli attacchi contro SQL Server sono rischiosi e devono essere ridotti in modo appropriato.  
 
@@ -229,7 +229,7 @@ Identificare e seguire le indicazioni generali per la versione di SQL Server in 
 - Se si installa SQL Server utilizzando un account utente di dominio, verificare che l'account computer del server del sito sia configurato per un nome dell'entità di servizio (SPN) pubblicato nei Servizi di dominio Active Directory. Senza SPN, l'autenticazione Kerberos e l'installazione di Configuration Manager avranno esito negativo.  
 
 
-## <a name="BKMK_Security_IIS"></a> Indicazioni sulla sicurezza per i sistemi del sito che eseguono IIS
+## <a name="security-guidance-for-site-systems-that-run-iis"></a><a name="BKMK_Security_IIS"></a> Indicazioni sulla sicurezza per i sistemi del sito che eseguono IIS
 
 Diversi ruoli del sistema del sito in Configuration Manager richiedono IIS. Il processo di protezione di IIS consente a Configuration Manager di funzionare correttamente e riduce il rischio di attacchi alla sicurezza. Quando è possibile, ridurre al minimo il numero di server che richiedono IIS. Ad esempio, eseguire solo il numero di punti di gestione richiesti per il supporto della base client, prendendo in considerazione l'alta disponibilità e l'isolamento di rete per la gestione client basata su Internet.  
 
@@ -297,7 +297,7 @@ Ad esempio, rimuovere le directory virtuali seguenti per un punto di distribuzio
 Identificare e seguire le indicazioni generali per la versione di IIS Server in uso. Prendere in considerazione tutti i requisiti di Configuration Manager riguardo ai ruoli del sistema del sito specifico. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
 
-## <a name="BKMK_Security_ManagementPoint"></a> Indicazioni sulla sicurezza per il punto di gestione
+## <a name="security-guidance-for-the-management-point"></a><a name="BKMK_Security_ManagementPoint"></a> Indicazioni sulla sicurezza per il punto di gestione
 
 I punti di gestione sono l'interfaccia primaria tra i dispositivi e Configuration Manager. Gli attacchi contro il punto di gestione e il server su cui è in esecuzione sono rischiosi e devono essere ridotti in modo appropriato. Applicare tutte le indicazioni sulla sicurezza appropriate e monitorare eventuali attività inconsuete.  
 
@@ -310,7 +310,7 @@ Evitare la situazione in cui il client di Configuration Manager che si trova in 
 Se si esegue la migrazione da una versione precedente a Configuration Manager Current Branch, eseguire la migrazione del client per il punto di gestione al nuovo sito appena possibile.  
 
 
-## <a name="BKMK_Security_FSP"></a> Indicazioni sulla sicurezza per il punto di stato di fallback
+## <a name="security-guidance-for-the-fallback-status-point"></a><a name="BKMK_Security_FSP"></a> Indicazioni sulla sicurezza per il punto di stato di fallback
 
 Se si installa un punto di stato di fallback in Configuration Manager, usare le seguenti indicazioni sulla sicurezza:
 
@@ -333,7 +333,7 @@ Per impostazione predefinita, il punto di stato di fallback accetta dati da qual
 Se si installa il punto di stato di fallback nella rete perimetrale o in una rete non attendibile, configurare il server del sito per avviare i trasferimenti di dati. Non usare l'impostazione predefinita che consente al punto di stato di fallback di avviare una connessione al server del sito.  
 
 
-## <a name="BKMK_SecurityIssues_Clients"></a> Problemi di sicurezza per l'amministrazione del sito
+## <a name="security-issues-for-site-administration"></a><a name="BKMK_SecurityIssues_Clients"></a> Problemi di sicurezza per l'amministrazione del sito
 
 Esaminare i problemi di sicurezza seguenti per Configuration Manager:  
 
@@ -373,7 +373,7 @@ Esaminare i problemi di sicurezza seguenti per Configuration Manager:
 
     Identificare e seguire le indicazioni sulla sicurezza per la versione di DNS usata per la risoluzione dei nomi.  
 
-## <a name="BKMK_Privacy_Cliients"></a> Informazioni sulla privacy per l'individuazione
+## <a name="privacy-information-for-discovery"></a><a name="BKMK_Privacy_Cliients"></a> Informazioni sulla privacy per l'individuazione
 
 L'individuazione crea i record delle risorse di rete e li archivia nel database di Configuration Manager. I record di dati di individuazione contengono informazioni sui computer, ad esempio gli indirizzi IP, le versioni dei sistemi operativi e i nomi dei computer. I metodi di individuazione di Active Directory possono essere configurati anche per restituire eventuali informazioni memorizzate in Active Directory Domain Services.  
 

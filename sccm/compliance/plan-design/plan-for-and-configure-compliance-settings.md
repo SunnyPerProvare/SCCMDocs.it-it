@@ -10,12 +10,12 @@ ms.assetid: 9ea20b01-676a-4cc2-b328-0098a41b202e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: e98b2963b81f58262524daafb5921b6c5ead23d6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 895d7fe55d3833010d3f18977f40b207eca1f84b
+ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816242"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80541089"
 ---
 # <a name="plan-for-and-configure-compliance-settings-in-configuration-manager"></a>Pianificare e configurare le impostazioni di conformità in Configuration Manager
 
@@ -28,7 +28,7 @@ Prima di usare le impostazioni di conformità di Configuration Manager, è neces
 |Prerequisito|Altre informazioni|  
 |------------------|----------------------|  
 |I client Windows di Configuration Manager devono essere abilitati e configurati per la valutazione della conformità.|Vedere di seguito|  
-|Se si vogliono eseguire report, è necessario configurare la creazione di report per il sito.|[Creazione di report](../../core/servers/manage/reporting.md)|  
+|Se si vogliono eseguire report, è necessario configurare la creazione di report per il sito.|[Introduzione alla creazione di report](/configmgr/core/servers/manage/introduction-to-reporting)|  
 |Autorizzazioni di sicurezza obbligatorie.|Il ruolo di sicurezza **Gestione impostazioni di conformità** include le autorizzazioni necessarie per gestire le impostazioni di conformità, gli elementi di configurazione di profili e dati utente e i profili di connessione remota.<br /><br /> [Configurare un'amministrazione basata su ruoli](../../core/servers/deploy/configure/configure-role-based-administration.md)|  
 
 ##  <a name="enable-and-configure-compliance-settings-for-windows-pcs-only"></a>Abilitare e configurare le impostazioni di conformità (solo per PC Windows)  

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Controllare l'accesso utente alle risorse dell'organizzazione in base alle regole di conformità da Intune
 ms.date: 05/13/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 4cf640b3-610c-4c3c-b966-c62e9f5654ff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 172c3d210ca951f372752669a271649b7d2ad3dd
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fff52930b3de6ec68c08a49ec53cbbdda0445bfb
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817109"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595989"
 ---
 # <a name="conditional-access-with-co-management"></a>Accesso condizionale con la co-gestione
 

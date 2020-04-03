@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Reindirizzare cartelle note di Windows verso OneDrive for Business usando un profilo di OneDrive for Business in Configuration Manager.
 ms.date: 04/11/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: e217699a-28b2-471a-b421-8fbd1d1fd638
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b49d09b37373eae3fc9f5489870c485bbf4b7fda
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 3704a3aca5340c0badd403f494a1fa835a6dcfa5
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816293"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595450"
 ---
 # <a name="onedrive-for-business-profiles"></a>Profili di OneDrive for Business
 
@@ -27,7 +27,7 @@ A partire da Configuration Manager versione 1902, è possibile creare profili di
 
 - Distribuire la versione 18.111.0603.0004 del client di sincronizzazione di OneDrive o una versione successiva. Per altre informazioni, vedere [Distribuire le app OneDrive mediante Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
 
-## <a name="bkmk_odfb"></a> Spostare cartelle note di Windows in OneDrive
+## <a name="move-windows-known-folders-to-onedrive"></a><a name="bkmk_odfb"></a> Spostare cartelle note di Windows in OneDrive
 <!--3556021-->
 Usare Configuration Manager per spostare le cartelle note di Windows in OneDrive for Business. Queste cartelle includono Desktop, Documenti e Immagini. Per semplificare gli aggiornamenti di Windows 10, distribuire queste impostazioni ai client Windows 7 prima di distribuire una sequenza di attività. 
 

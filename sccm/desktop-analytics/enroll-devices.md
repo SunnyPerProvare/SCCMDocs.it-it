@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come registrare i dispositivi in Desktop Analytics.
 ms.date: 10/30/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 2ea18d09-c957-47f7-8e54-c6f2b3c74347
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 415bf6d6dcc1194081bd73403b2eec1e2522930e
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 2df4fb22c69f81a6a9fa0ac431ecdb62ac22c9bc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76916714"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597332"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in Desktop Analytics
 
@@ -31,7 +31,7 @@ Sono disponibili due tipi di aggiornamento che è necessario applicare per un'es
 - [Esperienze utente connesse e telemetria](#bkmk_diagtrack)
 
 
-### <a name="bkmk_appraiser"></a> Aggiornamenti per la compatibilità
+### <a name="compatibility-updates"></a><a name="bkmk_appraiser"></a> Aggiornamenti per la compatibilità
 
 Il componente per la compatibilità (strumento di valutazione) esegue la diagnostica sul dispositivo Windows per valutarne lo stato di compatibilità con le versioni più recenti di Windows 10.
 
@@ -66,7 +66,7 @@ Esegue la diagnostica nei sistemi Windows 7 con Service Pack 1 (SP1) che parteci
 Per altre informazioni, vedere [Aggiornamento di compatibilità per mantenere Windows aggiornato in Windows 7](https://support.microsoft.com/help/2952664).
 
 
-### <a name="bkmk_diagtrack"></a> Esperienze utente connesse e telemetria
+### <a name="connected-user-experiences-and-telemetry-service"></a><a name="bkmk_diagtrack"></a> Esperienze utente connesse e telemetria
 
 Con i dati di diagnostica di Windows abilitati, Esperienze utente connesse e telemetria (DiagTrack) raccoglie i dati del sistema, dell'applicazione e del driver. Microsoft analizza i dati e li condivide nuovamente con l'utente tramite Desktop Analytics.
 

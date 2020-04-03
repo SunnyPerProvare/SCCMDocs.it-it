@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità disponibili in Configuration Manager Technical Preview versione 1805.
 ms.date: 05/21/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7996b3eb-5259-483b-af40-adae2943d123
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d60b99bc17c40e20e6472b367a67b06f9f22a15f
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.openlocfilehash: 9d571ef1ef5978838b29e20f0d758e43c55e4def
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035267"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602189"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1805 per Configuration Manager
 
@@ -279,21 +279,21 @@ Questa versione include miglioramenti per le modalità di comunicazione dei clie
 > I certificati PKI rimangono un'opzione valida per i clienti che vogliono usarli.  
 
 
-### <a name="bkmk_token"></a> Scenari
+### <a name="scenarios"></a><a name="bkmk_token"></a> Scenari
 Gli scenari seguenti traggono vantaggio da questi miglioramenti:  
 
-#### <a name="bkmk_token1"></a> Scenario 1: Da client a punto di gestione
+#### <a name="scenario-1-client-to-management-point"></a><a name="bkmk_token1"></a> Scenario 1: Da client a punto di gestione
 <!--1356889-->
 I [dispositivi aggiunti ad Azure AD](/azure/active-directory/devices/concept-azure-ad-join) possono comunicare tramite un Cloud Management Gateway (CMG) con un punto di gestione configurato per HTTP. Il server del sito genera un certificato per il punto di gestione in modo che possa comunicare tramite un canale sicuro.   
 
 > [!Note]  
 > Questo comportamento è cambiato rispetto a Configuration Manager Current Branch versione 1802, che richiede un punto di gestione abilitato per HTTPS per questo scenario. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
-#### <a name="bkmk_token2"></a> Scenario 2: Da client a punto di distribuzione
+#### <a name="scenario-2-client-to-distribution-point"></a><a name="bkmk_token2"></a> Scenario 2: Da client a punto di distribuzione
 <!--1358228-->
 Un gruppo di lavoro o un client aggiunto ad Azure AD può scaricare contenuto tramite un canale sicuro da un punto di distribuzione configurato per HTTP.   
 
-#### <a name="bkmk_token3"></a> Scenario 3: Identità del dispositivo di Azure AD 
+#### <a name="scenario-3-azure-ad-device-identity"></a><a name="bkmk_token3"></a> Scenario 3: Identità del dispositivo di Azure AD 
 <!--1358460-->
 Un dispositivo aggiunto ad Azure AD o un [dispositivo di Azure AD ibrido](/azure/active-directory/devices/concept-azure-ad-join-hybrid) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con CMG e il punto di gestione.  
 

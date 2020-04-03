@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Prendere in considerazione il database del sito e il ruolo del server del database del sito quando si pianifica la gerarchia di Configuration Manager.
 ms.date: 03/08/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 104fb4cc-6e83-40a3-8e6b-ac909fb9ec7d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 66f742dab8e222c620ddc6079c9a63340f40cda5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: a32f0a59a0b3ce3ad864fecf61fe7281b8ebbdd2
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799829"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600261"
 ---
 # <a name="plan-for-the-site-database-for-configuration-manager"></a>Pianificare il database del sito per Configuration Manager
 

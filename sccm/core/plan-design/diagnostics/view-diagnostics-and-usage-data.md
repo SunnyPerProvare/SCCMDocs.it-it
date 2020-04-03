@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: È possibile visualizzare i dati di diagnostica e di utilizzo per verificare che la gerarchia di Configuration Manager non contenga informazioni riservate.
 ms.date: 12/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 41b43c975b973d53683031fb4c1849d6e3ce822e
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: dc482f17bffe706ae61e0c252d3e11c73d900cad
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917285"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604414"
 ---
 # <a name="how-to-view-diagnostics-and-usage-data-for-configuration-manager"></a>Come visualizzare i dati di diagnostica e utilizzo per Configuration Manager
 
@@ -39,7 +39,7 @@ Quando il punto di connessione del servizio è in modalità offline, usare lo st
 
 Per altre informazioni, vedere [Usare lo strumento di connessione del servizio](/configmgr/core/servers/manage/use-the-service-connection-tool).
 
-## <a name="bkmk_hashes"></a> Hash unidirezionali
+## <a name="one-way-hashes"></a><a name="bkmk_hashes"></a> Hash unidirezionali
 
 Alcuni dati sono costituiti da stringhe di caratteri alfanumerici casuali. Configuration Manager usa l'algoritmo SHA-256 per creare hash unidirezionali. Questo processo assicura che Microsoft non raccolga dati potenzialmente sensibili. I dati con hash possono comunque essere usati a scopo di correlazione e confronto.
 

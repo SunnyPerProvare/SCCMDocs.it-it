@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Individuare le attività di manutenzione da eseguire per i siti e le gerarchie di Configuration Manager e il momento adatto in cui eseguirle.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 625bb787-6d16-47a0-8b0f-b129cd909ca3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ab2f3e4fa5b04ae427e30af27363381a25f06d42
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4bca4877446f93b73c8ce8f5ec490fd41e21f83a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794883"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590971"
 ---
 # <a name="maintenance-tasks-for-configuration-manager"></a>Attività di manutenzione per Configuration Manager
 
@@ -25,7 +25,7 @@ I siti e le gerarchie di Configuration Manager richiedono manutenzione e monitor
 
  Per impostare gli avvisi e usare il sistema di stato per monitorare l'integrità di Configuration Manager, vedere [Usare gli avvisi e il sistema di stato per Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
-## <a name="bkmk_MTs"></a> Attività di manutenzione
+## <a name="maintenance-tasks"></a><a name="bkmk_MTs"></a> Attività di manutenzione
 
  Una regolare manutenzione è importante per garantire il corretto funzionamento del sito. Conservare un registro di manutenzione per documentare le date della manutenzione, le persone che l'hanno effettuata ed eventuali commenti relativi alle attività svolte. È consigliabile effettuare la manutenzione del sito ogni giorno o una volta alla settimana. Alcune attività possono richiedere una pianificazione diversa. La manutenzione normale può includere sia attività di manutenzione incorporate che altre attività, ad esempio la manutenzione dell'account per mantenere la conformità con i criteri aziendali.  
 
@@ -94,7 +94,7 @@ Alcune attività che non richiedono la manutenzione giornaliera o settimanale so
 
 - Controllare l'integrità generale del sito.  
 
-## <a name="BKMK_UseMTs"></a> Mantenere l'integrità operativa del database del sito
+## <a name="maintain-the-operational-health-of-your-site-database"></a><a name="BKMK_UseMTs"></a> Mantenere l'integrità operativa del database del sito
 
  Mentre il sito e la gerarchia di Configuration Manager eseguono le attività pianificate e configurate, i componenti del sito aggiungono continuamente dati al database di Configuration Manager. Man mano che la quantità di dati aumenta, le prestazioni del database e lo spazio libero di archiviazione nel database diminuiscono. È possibile impostare le attività di manutenzione del sito in modo da rimuovere dati obsoleti che non sono più necessari.  
 
@@ -115,7 +115,7 @@ Dopo l'installazione di un sito di Configuration Manager, rivedere le attività 
 
  Usare la procedura seguente per specificare le impostazioni comuni delle attività di manutenzione.  
 
-### <a name="bkmk_MTs1906"></a>Per impostare le attività di manutenzione per Configuration Manager versione 1906
+### <a name="to-set-up-maintenance-tasks-for-configuration-manager-version-1906"></a><a name="bkmk_MTs1906"></a>Per impostare le attività di manutenzione per Configuration Manager versione 1906
 <!--3555894-->
 A partire dalla versione 1906, le attività di manutenzione del server del sito possono ora essere visualizzate, modificate e monitorate dalla scheda corrispondente nella visualizzazione dettagli di un server del sito. È tuttavia possibile modificare le attività di manutenzione scegliendo **Manutenzione sito** nel gruppo **Impostazioni** come nelle versioni di Configuration Manager precedenti.
 

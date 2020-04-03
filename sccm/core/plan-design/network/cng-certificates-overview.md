@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sul supporto dei certificati Cryptography Next Generation (CNG) per i clienti e i server Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: dba904ae-7c44-46db-ae63-999b9821cb46
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3a28134aff7cdb446d268b7f6e956a25c61f3659
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 43085c102a364866a8daa50c731a256e34f7e28a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799540"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599836"
 ---
 # <a name="cng-certificates-overview"></a>Panoramica dei certificati CNG
 <!-- 1356191 --> 

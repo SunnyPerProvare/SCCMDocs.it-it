@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questo diagramma per avviare la risoluzione dei problemi relativi a un messaggio mancante con la reinizializzazione della replica SQL in Configuration Manager
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 39a3001e-2df5-4b36-bd83-4f1d21dda335
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d24c35019b7a33fbe1d007817f4121fc1121b8d7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 0494c6b04a753ed7a777340b765854726bf28e8c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793593"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590380"
 ---
 # <a name="reinit-missing-message"></a>Reinizializzazione del messaggio mancante
 

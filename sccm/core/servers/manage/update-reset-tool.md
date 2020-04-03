@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare lo strumento di reimpostazione dell'aggiornamento per gli aggiornamenti nella console per Configuration Manager.
 ms.date: 07/31/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 25fa89d6-7e47-45a6-8f4e-70b77560fba6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c9a8fdc083d5c1fae16b5077dd25daa14353e1e5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c7a0bc8598fa9fc5df5478b1131734097952b586
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793207"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590196"
 ---
 # <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
 

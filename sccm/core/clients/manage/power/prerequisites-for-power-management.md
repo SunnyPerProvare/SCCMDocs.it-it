@@ -10,12 +10,12 @@ ms.assetid: 9c062f13-3c1f-4621-9cae-de0e322aa03f
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: cbcb56a95f0ad4d876636db311fa8d7d7047292c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d9989f0620d25072d8266673709ae64e12acb337
+ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75823926"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80540645"
 ---
 # <a name="prerequisites-for-power-management-in-configuration-manager"></a>Prerequisiti per il risparmio energia in Configuration Manager
 
@@ -36,4 +36,4 @@ Il risparmio energia in Configuration Manager ha dipendenze esterne e dipendenze
 |Dipendenza|Altre informazioni|  
 |----------------|----------------------|  
 |Il risparmio energia deve essere abilitato prima di poter creare e monitorare le combinazioni per il risparmio di energia.|Per informazioni su come abilitare e configurare il risparmio energia, vedere [Configurazione del risparmio energia](../../../../core/clients/manage/power/configuring-power-management.md).|  
-|Punto di Reporting Services|Prima di poter visualizzare i report di risparmio energia, è necessario configurare un punto di Reporting Services. Per altre informazioni, vedere [Reporting](../../../../core/servers/manage/reporting.md) (Creazione di report).|  
+|Punto di Reporting Services|Prima di poter visualizzare i report di risparmio energia, è necessario configurare un punto di Reporting Services. Per altre informazioni, vedere [Introduzione ai report](/configmgr/core/servers/manage/introduction-to-reporting).|  

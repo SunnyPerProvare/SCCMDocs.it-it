@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1603 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5f861b72-9f14-4d17-a512-4a79b660abe6
 author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: f80c0ca348eb97526aeb571f9f7e1f99cdaa93eb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7ef9a1d8e4f036c412b706495143b86ce9987873
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805235"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602835"
 ---
 # <a name="capabilities-in-technical-preview-1603-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per Configuration Manager
 
@@ -32,7 +32,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
   **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-##  <a name="BKMK_SC1603"></a> Miglioramenti a Software Center  
+##  <a name="improvements-to-software-center"></a><a name="BKMK_SC1603"></a> Miglioramenti a Software Center  
 
 ### <a name="new-tiled-view-for-apps"></a>Nuova visualizzazione affiancata per le app  
  Gli utenti finali possono ora scegliere tra un elenco di app o una visualizzazione affiancata delle app nella scheda **Applicazioni** di Software Center.  
@@ -40,7 +40,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 ### <a name="select-multiple-updates-in-software-center"></a>Selezionare più aggiornamenti in Software Center  
  Nella scheda **Aggiornamenti** di Software Center è ora possibile selezionare più aggiornamenti oppure selezionare **Aggiorna tutto** per iniziare a installare più aggiornamenti contemporaneamente.  
 
-##  <a name="BKMK_RC1603"></a> Miglioramenti del controllo remoto  
+##  <a name="improvements-to-remote-control"></a><a name="BKMK_RC1603"></a> Miglioramenti del controllo remoto  
 
 ### <a name="limit-shared-clipboard-access-in-a-remote-control-session"></a>Limitare l'accesso agli Appunti condivisi in una sessione di controllo remoto  
  È ora possibile abilitare la nuova impostazione client degli strumenti remoti, **Richiedere all'utente l'autorizzazione per il trasferimento di file negli Appunti condivisi**, per limitare l'accesso agli Appunti condivisi in una sessione di controllo remoto.  
@@ -49,7 +49,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
  Viene così aggiunto un livello di protezione per l'utente finale perché in precedenza, se all'utente che visualizzava veniva concesso il controllo completo sul computer dell'utente finale, questo poteva usare gli Appunti condivisi per trasferire i file dalla sessione al computer locale in modo completamente trasparente all'utente finale.  
 
-##  <a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
+##  <a name="customize-the-ramdisk-tftp-block-size-and-window-size-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
  Nella Technical Preview 1603 è possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.   
 È necessario testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia la scelta più efficiente.  
 

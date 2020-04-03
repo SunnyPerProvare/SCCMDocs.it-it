@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1607 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 2bb69547-3370-4860-96b0-7fb600c56482
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: c40d86db0a5140e196d7c9bfae39218b8505e1e0
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 61112b4af218088828ed3935c9e0b718a9196e33
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033848"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602767"
 ---
 # <a name="capabilities-in-technical-preview-1607-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1607 per Configuration Manager
 
@@ -27,7 +27,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="dmp_edition"></a>Miglioramenti ai criteri di aggiornamento edizione di Windows 10
+## <a name="improvements-to-the-windows-10-edition-upgrade-policy"></a><a name="dmp_edition"></a>Miglioramenti ai criteri di aggiornamento edizione di Windows 10
 
 In questa versione sono stati apportati ai criteri i miglioramenti seguenti:
 

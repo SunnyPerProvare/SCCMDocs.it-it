@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come eseguire un backup di siti prima di un evento di errore o di perdita di dati in Configuration Manager.
 ms.date: 01/08/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d13369027f38092a54db676c91287256869e03c0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4663f2ce763e9db8cbd284da4039eea248df56d9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797701"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592304"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Eseguire il backup di un sito di Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare uno script per ripristinare i siti in Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7703d7ce8ace9d0eda8cfe5175df7c5c18b9bf71
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: df544c5e482c2120dd739910ad9a65fd3799e771
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793190"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590263"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Ripristino automatico del sito per Configuration Manager   
 

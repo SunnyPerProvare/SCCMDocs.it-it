@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità disponibili in Configuration Manager Technical Preview versione 1902.
 ms.date: 02/08/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: a3aac306-85d6-4cad-92bb-8ad9f920565e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: c4b1f895d69c9a0bc0f8a6466b99a32bef1e3756
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c4f1fa45aeb1ae5a7690dcb2674b974e78d977af
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75823586"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80594495"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-1902"></a>Funzionalità in Configuration Manager Technical Preview versione 1902
 

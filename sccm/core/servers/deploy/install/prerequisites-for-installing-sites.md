@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui prerequisiti per l'installazione di diversi tipi di siti di Configuration Manager.
 ms.date: 07/31/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3158c55ad7e0ba62f4607eaf69560bc87badfe06
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: cf7171a9add1b0d47fa4be9c90e010a86cbd2260
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405794"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592428"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di Configuration Manager
 

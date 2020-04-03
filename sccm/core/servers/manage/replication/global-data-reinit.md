@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questo diagramma per avviare la risoluzione dei problemi di reinizializzazione della replica SQL per i dati globali in una gerarchia di Configuration Manager
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d36622c0-776c-493b-971a-4a586fc394d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bc21d3fbb84629e8ae66ea5498a855c672c9b741
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b4213c91c616278a6dd8fa3e58d40ba301b0ecb1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794275"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590561"
 ---
 # <a name="troubleshoot-global-data-reinit"></a>Risoluzione dei problemi di reinizializzazione dei dati globali
 

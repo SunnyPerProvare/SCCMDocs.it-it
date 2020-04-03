@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sull'uso di un servizio MDM di terze parti con Configuration Manager
 ms.date: 05/21/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: ed4dc65e-e5d5-4f75-88ac-f4849ec8fc10
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c4ecc3f5b456eb8d50675797ba2bfa4c7a6ecf25
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3dce1e4a2719dc6f36ebd1ba4449e477640f6ba8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75782031"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596445"
 ---
 # <a name="third-party-mdm-coexistence-with-configuration-manager"></a>Coesistenza di servizi MDM di terze parti con Configuration Manager
 

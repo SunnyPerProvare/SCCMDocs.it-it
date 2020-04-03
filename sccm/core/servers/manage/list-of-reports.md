@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Esaminare l'elenco dei report inclusi in Configuration Manager. I report vengono visualizzati in diverse categorie.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8474cb1bab82528a94baf3acdc302abb25a61794
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 49fe5b5b94b29d93d29108660e2b76db2f87ddf9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034259"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591102"
 ---
 # <a name="list-of-reports-in-configuration-manager"></a>Elenco dei report di Configuration Manager
 

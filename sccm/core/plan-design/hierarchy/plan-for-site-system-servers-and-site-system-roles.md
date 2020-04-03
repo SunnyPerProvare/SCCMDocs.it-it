@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Prendere in considerazione i server di sistema del sito e i ruoli di sistema del sito quando si pianifica la gerarchia di Configuration Manager.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0a7415ba-2c53-4433-983e-780e92aa662f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 145a9e7efbf903b0a410f447ab3e4d223f3b7831
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 4a4798cbc4259edef803f654b4f979c726b9eda6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034367"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600306"
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-in-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito in Configuration Manager
 
@@ -23,14 +23,14 @@ ms.locfileid: "76034367"
 
 Ogni sito di Configuration Manager installato include un server del sito, ovvero un **server del sistema del sito**. Il sito può includere anche altri server del sistema del sito nei computer remoti rispetto al server del sito. I server del sistema del sito, ovvero il server del sito o un server del sistema del sito remoto, supportano i **ruoli del sistema del sito**.  
 
-## <a name="bkmk_siteservers"></a> Server del sistema del sito  
+## <a name="site-system-servers"></a><a name="bkmk_siteservers"></a> Server del sistema del sito  
 
 Quando si installa un ruolo del sistema del sito in un computer, il computer diventa un server del sistema del sito. In ogni sito è possibile installare uno o più server del sistema del sito aggiuntivi. Non è necessario installare altri server del sistema del sito e si può scegliere di eseguire tutti i ruoli del sistema del sito direttamente nel computer del server del sito. Ogni server di sistema del sito supporta uno o più ruoli del sistema del sito. I server supplementari possono essere utili per espandere le funzionalità e la capacità di un sito, condividendo il carico di elaborazione derivante dai ruoli del sistema del sito in un server.  
 
 Quando si valuta se aggiungere un server del sistema del sito, verificare che il server soddisfi i prerequisiti per l'uso previsto. Aggiungerlo in un percorso di rete con larghezza di banda sufficiente per comunicare con gli endpoint previsti. Questi endpoint includono il server del sito, le risorse di dominio, un percorso basato su cloud, i server del sistema del sito e i client.  
 
 
-## <a name="bkmk_planroles"></a> Site system roles  
+## <a name="site-system-roles"></a><a name="bkmk_planroles"></a> Site system roles  
 
 Installare i ruoli del sistema del sito in un computer per offrire funzionalità aggiuntive al sito. Alcuni esempi:  
 

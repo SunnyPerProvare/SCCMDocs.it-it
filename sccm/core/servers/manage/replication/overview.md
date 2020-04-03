@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questi diagrammi per semplificare la comprensione e la risoluzione dei problemi di replica SQL tra siti di Configuration Manager
 ms.date: 02/05/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 71d7430e-c5aa-485b-8dc0-c80fd8f29f17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e8c2e6cc42e8945cf1cfc20f26f3c6dae6c6c989
-ms.sourcegitcommit: 5ffa00d961b5b166cd723e732e4f0fd5325d584b
+ms.openlocfilehash: 39f3d6a94bcc0e4004944c28711da38daef12642
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77051367"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590306"
 ---
 # <a name="troubleshoot-sql-replication"></a>Risolvere i problemi di replica SQL
 

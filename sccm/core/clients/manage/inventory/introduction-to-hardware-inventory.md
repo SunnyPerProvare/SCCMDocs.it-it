@@ -10,12 +10,12 @@ ms.assetid: 3969952e-9d05-49c9-82a2-e7e90ccef511
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e5770a3b12e7b0e3d0c28d59cb27a14a7a8f7a5e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ca66a60f051a5bf2a99f07f7b462255305545a2b
+ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824300"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80540792"
 ---
 # <a name="introduction-to-hardware-inventory-in-configuration-manager"></a>Introduzione all'inventario hardware in Configuration Manager
 
@@ -32,7 +32,7 @@ Usare l'inventario hardware in Configuration Manager per raccogliere informazion
 
 - [Creare raccolte basate su query secondo una configurazione hardware specifica](../../../../core/clients/manage/collections/introduction-to-collections.md). Le appartenenze alle raccolte basate su query vengono aggiornate automaticamente in base a una pianificazione. È possibile usare le raccolte per numerose attività, tra cui la distribuzione software.
 
-- [Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware all'interno dell'organizzazione](../../../../core/servers/manage/reporting.md).
+- [Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware all'interno dell'organizzazione](/configmgr/core/servers/manage/introduction-to-reporting).
 
 - [Usare Esplora inventario risorse](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) per visualizzare informazioni dettagliate relative all'inventario hardware raccolto dai dispositivi client.
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1906.
 ms.date: 08/27/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e6837956-1f1e-4104-a348-ac2266199f60
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3b357b56f4980b9b066893414954a3b2980edc2c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 478c503922e1d10603e65cf6476b1dc18ca78f7a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796337"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591894"
 ---
 # <a name="checklist-for-installing-update-1906-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1906 di Configuration Manager
 

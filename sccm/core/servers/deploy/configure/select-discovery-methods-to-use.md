@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Considerazioni sui metodi da usare e sui siti in cui eseguirli.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 127ce713-d085-430f-ac7b-2701637fe126
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 19266daaad0c1e068cfd332bb02eb8643b59b43d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2f08ab44a11b48b4446a372c4f6065ea0d7c63e0
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798442"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592787"
 ---
 # <a name="select-discovery-methods-to-use-for-configuration-manager"></a>Selezionare i metodi di individuazione da usare per Configuration Manager
 
@@ -60,7 +60,7 @@ Sono disponibili due metodi per individuare l'infrastruttura di rete, ovvero **i
 
  Quando si desidera individuare la topologia di rete, utilizzare l'individuazione di rete. Mentre altri metodi di individuazione restituiscono informazioni relative a Active Directory Domain Services e possono identificare il percorso di rete corrente di un client, non offrono informazioni sull'infrastruttura basate sulle subnet e sulla topologia del router della rete.  
 
-##  <a name="bkmk_shared"></a> I dati di individuazione vengono condivisi tra i siti  
+##  <a name="discovery-data-is-shared-among-sites"></a><a name="bkmk_shared"></a> I dati di individuazione vengono condivisi tra i siti  
  Dopo che Configuration Manager aggiunge i dati di individuazione a un database, questi vengono rapidamente condivisi in tutti i siti della gerarchia. Poiché l'individuazione delle stesse informazioni in più siti della gerarchia non offre nessun vantaggio, impostare un'istanza singola di ogni metodo di individuazione in un singolo sito. È consigliabile eseguire questa operazione invece di eseguire più istanze di un singolo metodo in siti diversi.  
 
  Tuttavia, per alcuni ambienti può essere utile assegnare lo stesso metodo di individuazione da eseguire in più siti, con configurazioni e pianificazioni distinte. Ad esempio, quando si usa l'individuazione di rete, potrebbe essere necessario impostare ogni sito per individuare la propria rete locale, anziché provare a individuare tutti i percorsi di rete in una WAN.
@@ -101,7 +101,7 @@ Se si usa l'**individuazione di rete**:
 
 Poiché l'**individuazione heartbeat** non viene eseguita in un sito specifico, non è necessario prenderla in considerazione in fase di pianificazione generale per stabilire dove eseguire l'individuazione.  
 
-##  <a name="bkmk_best"></a> Procedure consigliate per l'individuazione  
+##  <a name="best-practices-for-discovery"></a><a name="bkmk_best"></a> Procedure consigliate per l'individuazione  
 Per ottenere risultati ottimali con l'individuazione, è consigliabile eseguire quanto segue:
 
 - **Prima di eseguire l'individuazione gruppo Active Directory, eseguire l'individuazione sistema Active Directory e l'individuazione utente Active Directory.**  
